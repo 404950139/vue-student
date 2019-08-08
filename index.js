@@ -20,27 +20,27 @@ app.all("*", function(req, res, next) {
 });
 
 // 查询所有学生
-app.get("/selectAllStudent", loader.get("/selectAllStudent"));
+app.get("/api/selectAllStudent", loader.get("/selectAllStudent"));
 // 通过页码查询学生
-app.get("/selectStudentByPage", loader.get("/selectStudentByPage"));
+app.get("/api/selectStudentByPage", loader.get("/selectStudentByPage"));
 // 添加学生信息
 app.post("/insertStudentForm", loader.get("/insertStudentForm"));
 // 通过关键词查询学生
-app.get("/selectStudentByKeyWords", loader.get("/selectStudentByKeyWords"));
+app.get("/api/selectStudentByKeyWords", loader.get("/selectStudentByKeyWords"));
 // 通过关键词和页码搜索学生信息
-app.get("/selectStudentByKAndP", loader.get("/selectStudentByKAndP"));
+app.get("/api/selectStudentByKAndP", loader.get("/selectStudentByKAndP"));
 // 修改学生信息
-app.post("/editStudentInfo", loader.get("/editStudentInfo"));
+app.post("/api/editStudentInfo", loader.get("/editStudentInfo"));
 // 删除学生信息
-app.get("/deleteStudentInfo", loader.get("/deleteStudentInfo"));
+app.get("/api/deleteStudentInfo", loader.get("/deleteStudentInfo"));
 // 通过地名查询学生的数量
-app.get("/selectCountByAddress", loader.get("/selectCountByAddress"));
+app.get("/api/selectCountByAddress", loader.get("/selectCountByAddress"));
 // 查询用户的账号密码
-app.post("/selectUser", loader.get("/selectUser"));
+app.post("/api/selectUser", loader.get("/selectUser"));
 // 创建用户账号密码
-app.post("/insertUserInfo", loader.get("/insertUserInfo"));
+app.post("/api/insertUserInfo", loader.get("/insertUserInfo"));
 // 读取图片
-app.get("/static/water/*", (req, res) => {
+app.get("/api/static/water/*", (req, res) => {
   res.sendFile( __dirname + "/" + req.url );
 });
 

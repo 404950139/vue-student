@@ -5,7 +5,7 @@ const pageSize = store.state.pageSize;
 let type = null;
 
 const myAJAX = axios.create({
-  baseURL: "http://localhost:8081",
+  baseURL: "http://www.nixingdongman/api",
   transformResponse: res => {
     const data = JSON.parse(res);
     if (data.status == 200) {
