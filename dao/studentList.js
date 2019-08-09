@@ -2,7 +2,7 @@ const dbUtil = require("./dbUtil");
 
 // 查询数据库所有学生信息
 const selectAllStudnetDao = success => {
-  const selectQuery = "select * from studentList";
+  const selectQuery = "select * from studentlist";
   const params = [];
   const connection = dbUtil();
   connection.connect();
@@ -23,7 +23,7 @@ const selectAllStudnetDao = success => {
  * success  成功后的回调函数
  */
 const selectStudentByPageDao = (nowPage, pageSize, success) => {
-  const selectQuery = "select * from studentList limit ?, ?";
+  const selectQuery = "select * from studentlist limit ?, ?";
   const params = [parseInt(nowPage * pageSize), parseInt(pageSize)];
   const connection = dbUtil();
   connection.connect();
@@ -41,7 +41,7 @@ const selectStudentByPageDao = (nowPage, pageSize, success) => {
  * 查询所有学生的条数
  */
 const selectStudentByCountDao = success => {
-  const selectQuery = "select count(*) from studentList";
+  const selectQuery = "select count(*) from studentlist";
   const params = [];
   const connection = dbUtil();
   connection.connect();
@@ -75,7 +75,7 @@ const insertStudentDao = (
   success
 ) => {
   const insertQuery =
-    "insert into studentList (`sName`, `sSex`, `sEmail`, `sYear`, `sPhone`, `sAddress`) value (?, ?, ?, ?, ?, ?)";
+    "insert into studentlist (`sName`, `sSex`, `sEmail`, `sYear`, `sPhone`, `sAddress`) value (?, ?, ?, ?, ?, ?)";
   const params = [sName, sSex, sEmail, sYear, sPhone, sAddress];
   const connection = dbUtil();
   connection.connect();
@@ -95,7 +95,7 @@ const insertStudentDao = (
  * success      成功回调函数
  */
 const selectStudentByKeyWordsDao = (keyWords, success) => {
-  const selectQuery = "select * from studentList where sName like ?";
+  const selectQuery = "select * from studentlist where sName like ?";
   const params = [keyWords];
   const connection = dbUtil();
   connection.connect();
@@ -117,7 +117,7 @@ const selectStudentByKeyWordsDao = (keyWords, success) => {
  * success      成功回调函数
  */
 const selectStudentByKAndPDao = (keyWords, nowPage, pageSize, success) => {
-  const selectQuery = "select * from studentList where sName like ? limit ?, ?";
+  const selectQuery = "select * from studentlist where sName like ? limit ?, ?";
   const params = [keyWords, parseInt(nowPage * pageSize), parseInt(pageSize)];
   const connection = dbUtil();
   connection.connect();
@@ -135,7 +135,7 @@ const selectStudentByKAndPDao = (keyWords, nowPage, pageSize, success) => {
  * 查询关键词的条数
  */
 const selectStudentCountBykDao = (keyWords, success) => {
-  const selectQuery = "select count(*) from studentList where sName like ?";
+  const selectQuery = "select count(*) from studentlist where sName like ?";
   const params = [keyWords];
   const connection = dbUtil();
   connection.connect();
@@ -161,7 +161,7 @@ const editStudentInfoDao = (
   success
 ) => {
   const updateQuery =
-    "UPDATE studentList SET sName = ?, sSex = ?, sEmail = ?, sYear = ?, sPhone = ?, sAddress = ? WHERE `id` = ?";
+    "UPDATE studentlist SET sName = ?, sSex = ?, sEmail = ?, sYear = ?, sPhone = ?, sAddress = ? WHERE `id` = ?";
   const params = [sName, sSex, sEmail, sYear, sPhone, sAddress, id];
   const connection = dbUtil();
   connection.connect();
@@ -179,7 +179,7 @@ const editStudentInfoDao = (
  * 删除学生信息
  */
 const deleteStudentDao = (sNo, success) => {
-  const deleteQuery = "delete from studentList where id = ?";
+  const deleteQuery = "delete from studentlist where id = ?";
   const params = [parseInt(sNo)];
   const connection = dbUtil();
   connection.connect();
@@ -202,7 +202,7 @@ const selectCountByAddressDao = (address, success) => {
   const connection = dbUtil();
   connection.connect();
   for (let i = 0; i < addr.length; i++) {
-    const selectQuery = "select count(*) from studentList where `sAddress` = ?";
+    const selectQuery = "select count(*) from studentlist where `sAddress` = ?";
     const params = [addr[i]];
     connection.query(selectQuery, params, (error, result) => {
       if (error == null) {

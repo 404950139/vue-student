@@ -18,12 +18,12 @@ export default {
   data() {
     return {
       urls: [
-        "http://localhost:8080/static/water/1.jpg",
-        "http://localhost:8080/static/water/2.jpg",
-        "http://localhost:8080/static/water/3.jpg",
-        "http://localhost:8080/static/water/4.jpg",
-        "http://localhost:8080/static/water/5.jpg",
-        "http://localhost:8080/static/water/6.gif"
+        "http://www.nixingdongman.com/static/water/1.jpg",
+        "http://www.nixingdongman.com/static/water/2.jpg",
+        "http://www.nixingdongman.com/static/water/3.jpg",
+        "http://www.nixingdongman.com/static/water/4.jpg",
+        "http://www.nixingdongman.com/static/water/5.jpg",
+        "http://www.nixingdongman.com/static/water/6.gif"
       ]
     };
   },

@@ -1,11 +1,13 @@
 import axios from "axios";
 import toast from "../tools/model/index.js";
 import store from "../store";
+
+axios.defaults.withCredentials = false;
 const pageSize = store.state.pageSize;
 let type = null;
 
 const myAJAX = axios.create({
-  baseURL: "http://www.nixingdongman/api",
+  baseURL: "http://api.nixingdongman.com/api",
   transformResponse: res => {
     const data = JSON.parse(res);
     if (data.status == 200) {
@@ -19,6 +21,7 @@ const myAJAX = axios.create({
     }
   }
 });
+
 
 // 查询所有学生
 const selectAllStudent = () => {

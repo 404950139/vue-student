@@ -2,7 +2,7 @@ const dbUtil = require("./dbUtil");
 
 // 查询用户账号密码
 const selectUserInfoDao = (user, success) => {
-  const selectQuery = "select psw from userInfo where user = ?";
+  const selectQuery = "select psw from userinfo where user = ?";
   const params = [user];
   const connection = dbUtil();
   connection.connect();
@@ -18,7 +18,7 @@ const selectUserInfoDao = (user, success) => {
 
 // 注册用户账号密码
 const insertUserInfoDao = (user, psw, success) => {
-  const insertQuery = "insert into userInfo (`user`, `psw`) value(?, ?)";
+  const insertQuery = "insert into userinfo (`user`, `psw`) value(?, ?)";
   const params = [user, psw];
   const connection = dbUtil();
   connection.connect();
